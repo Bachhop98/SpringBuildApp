@@ -1,12 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Clone') {
+        stage('Clone stage') {
             steps {
                 git 'https://github.com/Bachhop98/SpringBuildApp.git'
             }
         }
-        stage('Clone') {
+        stage('Build stage') {
             steps {
             // This step should not normally be used in your script. Consult the inline help for details.
             withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
